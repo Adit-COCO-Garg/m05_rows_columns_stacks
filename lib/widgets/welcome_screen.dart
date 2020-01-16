@@ -15,7 +15,7 @@ class WelcomeScreen extends StatelessWidget {
     return ValueListenableBuilder<String>(
       valueListenable: heraObjectInstance.mainAppBarString,
       builder: (BuildContext context, String mainAppBarString, Widget child) {
-        heraObjectInstance.changeAppBarTitle('Welcome to Rows and Columns');
+        heraObjectInstance.changeAppBarTitle('Rows, Columns and Stacks');
         return SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.all(24.0),

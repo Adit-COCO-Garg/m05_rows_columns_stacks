@@ -58,37 +58,39 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
     final heraObjectInstance = Provider.of<HeraObject>(context);
     return Stack(
       children: <Widget>[
-        Scaffold(
-          backgroundColor: AppColors.darkThemeNoElevation,
-          appBar: AppBar(
-            backgroundColor: AppColors.darkThemeAppBar,
-            title: ValueListenableBuilder<String>(
-              valueListenable: heraObjectInstance.mainAppBarString,
-              builder: (BuildContext context, String newTitle, Widget child) {
-                return Text(
-                  newTitle,
-                  style: TextStyle(
-                    color: AppColors.darkThemeWhite,
-                  ),
-                );
-              },
+        SafeArea(
+          child: Scaffold(
+            backgroundColor: AppColors.darkThemeNoElevation,
+            appBar: AppBar(
+              backgroundColor: AppColors.darkThemeAppBar,
+              title: ValueListenableBuilder<String>(
+                valueListenable: heraObjectInstance.mainAppBarString,
+                builder: (BuildContext context, String newTitle, Widget child) {
+                  return Text(
+                    newTitle,
+                    style: TextStyle(
+                      color: AppColors.darkThemeWhite,
+                    ),
+                  );
+                },
+              ),
             ),
-          ),
 
-          /// Bottom NavBar
-          bottomNavigationBar: BottomNavigationBar(
-            onTap: (tappedItemIndex) => setState(() {
-              _index = tappedItemIndex;
-            }),
-            backgroundColor: AppColors.darkThemeAppBar,
-            currentIndex: _index,
-            type: BottomNavigationBarType.fixed,
-            items: bottomNavBarItems,
-            selectedItemColor: AppColors.darkThemeSelectedIcons,
-            unselectedItemColor: AppColors.darkThemeUnselectedIcons,
-          ),
+            /// Bottom NavBar
+            bottomNavigationBar: BottomNavigationBar(
+              onTap: (tappedItemIndex) => setState(() {
+                _index = tappedItemIndex;
+              }),
+              backgroundColor: AppColors.darkThemeAppBar,
+              currentIndex: _index,
+              type: BottomNavigationBarType.fixed,
+              items: bottomNavBarItems,
+              selectedItemColor: AppColors.darkThemeSelectedIcons,
+              unselectedItemColor: AppColors.darkThemeUnselectedIcons,
+            ),
 
-          body: decideWhichBodyToUse(),
+            body: decideWhichBodyToUse(),
+          ),
         ),
         ///
         /// Splash Screen
@@ -147,7 +149,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
     ),
     BottomNavigationBarItem(
       icon: Icon(Icons.live_help),
-      title: const Text('Exercises'),
+      title: const Text('Make Me!'),
     ),
   ];
 }
