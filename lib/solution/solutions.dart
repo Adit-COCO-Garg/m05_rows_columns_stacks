@@ -19,11 +19,15 @@ class Solutions extends StatelessWidget {
         heraObjectInstance.changeAppBarTitle('Exercise Solutions');
         return Padding(
           padding: const EdgeInsets.all(8),
+
+
           child: SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
+
+
                 Container(
                   width: 200,
                   child: SingleChildScrollView(
@@ -137,6 +141,7 @@ class Solutions extends StatelessWidget {
                     ),
                   ),
                 ),
+
                 Container(
                   width: 200,
                   child: SingleChildScrollView(
